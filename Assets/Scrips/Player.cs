@@ -8,7 +8,7 @@ public class Player: MonoBehaviour {
     public GeneratorSpot closestGenerator;
 
     public Image distanceIndicatorImage;
-    public Image buildIndicatorImage;
+    public Animation buildIndicator;
 
     private bool returnToBase = false;
 
@@ -18,7 +18,11 @@ public class Player: MonoBehaviour {
         set {
             if (canBuild == value) return;
             canBuild = value;
-            if (canBuild) { buildIndicatorImage.GetComponent<Animation>().Play(); }
+            if (canBuild) {
+                buildIndicator.Play("BuildIndicatorShow");
+            } else {
+                buildIndicator.Play("BuildIndicatorHide");
+            }
         }
     }
 
@@ -39,7 +43,7 @@ public class Player: MonoBehaviour {
             if (!returnToBase) {
                 float distance = closestGenerator.CalculateDistance(transform.position, true);
                 distanceIndicatorImage.fillAmount = distance;
-                CanBuild = (distance >= 0.9f);
+                CanBuild = (distance >= 1);
             } else {
 
                 // TODO show a message that the user need to return to base
