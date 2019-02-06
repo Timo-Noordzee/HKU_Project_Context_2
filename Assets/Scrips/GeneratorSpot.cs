@@ -39,7 +39,7 @@ public class GeneratorSpot: MonoBehaviour {
     public float CalculateDistance(Vector3 playerLocation, bool isPercentage = false) {
         float distance = Vector3.Distance(playerLocation, transform.position);
         if (isPercentage) {
-            return (distance - settingsProfile.GeneratorDetectionRange / (settingsProfile.GeneratorDetectionRange));
+            return 1 - (distance - settingsProfile.GeneratorDetectionRange / (settingsProfile.GeneratorDetectionRange));
         }
         return distance;
     }

@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class Player: MonoBehaviour {
 
     public GeneratorSpot closestGenerator;
+
     public Image distanceIndicatorImage;
+    public Image buildIndicatorImage;
 
     private bool returnToBase = false;
 
@@ -27,6 +29,11 @@ public class Player: MonoBehaviour {
             if (!returnToBase) {
                 float distance = closestGenerator.CalculateDistance(transform.position, true);
                 distanceIndicatorImage.fillAmount = distance;
+
+                if (distance >= 0.9f) {
+                    buildIndicatorImage.GetComponent<Animation>().Play();
+                }
+
             } else {
 
                 // TODO show a message that the user need to return to base
