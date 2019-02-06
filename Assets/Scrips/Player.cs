@@ -10,7 +10,6 @@ public class Player: MonoBehaviour {
 
     private bool returnToBase = false;
 
-
     private void Start() {
 
     }
@@ -39,6 +38,8 @@ public class Player: MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag(GeneratorSpot.TAG)) {
             closestGenerator = other.gameObject.GetComponent<GeneratorSpot>();
+        } else if (other.gameObject.CompareTag(Base.TAG)) {
+            returnToBase = false;
         }
     }
 
