@@ -664,7 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closestGenerator: {fileID: 0}
   distanceIndicatorImage: {fileID: 713192564}
-  buildIndicator: {fileID: 795683594}
+  buildIndicator: {fileID: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,22 +1093,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795683590}
   m_CullTransparentMesh: 0
---- !u!111 &795683594
-Animation:
+--- !u!95 &795683594
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795683590}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d5062fc007ba9364ab50248da4cf5473, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: d5062fc007ba9364ab50248da4cf5473, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3b5e1fa1f0e9d2d4e9206c99d8abc0a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1383370893
 PrefabInstance:
   m_ObjectHideFlags: 0

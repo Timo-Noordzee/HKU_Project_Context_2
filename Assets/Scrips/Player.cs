@@ -8,7 +8,9 @@ public class Player: MonoBehaviour {
     public GeneratorSpot closestGenerator;
 
     public Image distanceIndicatorImage;
-    public Animation buildIndicator;
+    public Animator animator;
+
+    public GameObject generatorPrefab;
 
     private bool returnToBase = false;
 
@@ -19,10 +21,11 @@ public class Player: MonoBehaviour {
             if (canBuild == value) return;
             canBuild = value;
             if (canBuild) {
-                buildIndicator.Play("BuildIndicatorShow");
+                animator.SetBool("Show", true);
             } else {
-                buildIndicator.Play("BuildIndicatorHide");
+                animator.SetBool("Show", false);
             }
+            animator.SetTrigger("ShowIcon");
         }
     }
 
@@ -46,8 +49,12 @@ public class Player: MonoBehaviour {
                 CanBuild = (distance >= 1);
             } else {
 
-                // TODO show a message that the user need to return to base
+            }
+        }
 
+        if (Input.GetButtonDown("Fire1")) {
+            if (CanBuild) {
+                //Instantiate(generatorPrefab, closestGenerator.tr)
             }
         }
     }
