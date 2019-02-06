@@ -12,6 +12,16 @@ public class Player: MonoBehaviour {
 
     private bool returnToBase = false;
 
+    private bool canBuild = false;
+    private bool CanBuild {
+        get { return canBuild; }
+        set {
+            if (canBuild == value) return;
+            canBuild = value;
+            if (canBuild) { buildIndicatorImage.GetComponent<Animation>().Play(); }
+        }
+    }
+
     private void Start() {
 
     }
@@ -29,11 +39,7 @@ public class Player: MonoBehaviour {
             if (!returnToBase) {
                 float distance = closestGenerator.CalculateDistance(transform.position, true);
                 distanceIndicatorImage.fillAmount = distance;
-
-                if (distance >= 0.9f) {
-                    buildIndicatorImage.GetComponent<Animation>().Play();
-                }
-
+                CanBuild = (distance >= 0.9f);
             } else {
 
                 // TODO show a message that the user need to return to base
