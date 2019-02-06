@@ -11,9 +11,9 @@ public class SettingsProfile: ScriptableObject {
 
     [Header("Generator Settings")]
     [Tooltip("The default GeneratorSettingsProfile that gets assigned if the generator doesn't have a custom profile")]
-    [SerializeField] private GeneratorSettingsProfile defaultGeneratorSettingsProfile;
-    public GeneratorSettingsProfile DefaultGeneratorSettingsProfile {
-        get { return defaultGeneratorSettingsProfile; }
+    [SerializeField] private GeneratorSettingsProfile generatorSettingsProfile;
+    public GeneratorSettingsProfile GeneratorSettingsProfile {
+        get { return generatorSettingsProfile; }
     }
 
 }

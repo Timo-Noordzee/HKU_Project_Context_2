@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider))]
 public class GeneratorSpot: MonoBehaviour {
 
+    public static string TAG = "GeneratorSpot";
+
     public GeneratorSettingsProfile settingsProfile;
 
     private CapsuleCollider zoneTrigger;
@@ -12,7 +14,7 @@ public class GeneratorSpot: MonoBehaviour {
     private void Start() {
         zoneTrigger = GetComponent<CapsuleCollider>();
         if (settingsProfile == null) {
-            settingsProfile = SettingsProfile.Main.DefaultGeneratorSettingsProfile;
+            settingsProfile = SettingsProfile.Main.GeneratorSettingsProfile;
             Debug.LogWarning("GeneratorSpot doesn't have a SettingsProfile assigned the default is used instead!");
         }
     }
@@ -32,6 +34,14 @@ public class GeneratorSpot: MonoBehaviour {
         if (settingsProfile != null) {
             Gizmos.DrawWireSphere(transform.position, settingsProfile.GeneratorDetectionRange);
         }
+    }
+
+    public float CalculateDistance(Vector3 playerLocation, bool isPercentage = false) {
+        float distance = Vector3.Distance(playerLocation, transform.position);
+        if (isPercentage) {
+            return (distance - settingsProfile.GeneratorDetectionRange / (settingsProfile.GeneratorDetectionRange));
+        }
+        return distance;
     }
 
 }
