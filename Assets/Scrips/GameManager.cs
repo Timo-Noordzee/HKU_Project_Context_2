@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GameManager: MonoBehaviour {
 
-    #region SettingsProfile
     public SettingsProfile settingsProfile;
     public static SettingsProfile SettingsProfile {
         get { return Instance.settingsProfile; }
     }
-    #endregion
 
     public static GameManager Instance;
+
+    [HideInInspector] Player player;
 
     private void Awake() {
         Instance = this;
