@@ -7,6 +7,8 @@ public class Player: MonoBehaviour {
 
     public GeneratorSpot closestGenerator;
 
+    public Transform spawnPoint;
+
     public Image distanceIndicatorImage;
     public Animator animator;
 
@@ -43,10 +45,12 @@ public class Player: MonoBehaviour {
 
     private void OnEnable() {
         EventManager.registerEventListener(GameEventType.OnBuildGeneratorEvent, OnBuildGenerator);
+        EventManager.registerEventListener(GameEventType.PlayerDieEvent, OnPlayerDieEvent);
     }
 
     private void OnDisable() {
         EventManager.unregisterEventListener(GameEventType.OnBuildGeneratorEvent, OnBuildGenerator);
+        EventManager.unregisterEventListener(GameEventType.PlayerDieEvent, OnPlayerDieEvent);
     }
 
     private void Update() {
@@ -80,6 +84,8 @@ public class Player: MonoBehaviour {
                 UserInterfaceManager.ToggleTooltip(false);
             }
             returnToBase = false;
+        } else if (other.gameObject.CompareTag("Lava")) {
+            EventManager.triggerEvent(GameEventType.PlayerDieEvent);
         }
     }
 
@@ -92,7 +98,12 @@ public class Player: MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Lava")) {
             EventManager.triggerEvent(GameEventType.PlayerDieEvent);
+            Debug.Log("Die!");
         }
+    }
+
+    private void OnPlayerDieEvent() {
+        transform.position = spawnPoint.position;
     }
 
     private void OnBuildGenerator() {

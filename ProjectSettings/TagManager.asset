@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GeneratorSpot
   - Base
+  - Fire
+  - Lava
   layers:
   - Default
   - TransparentFX

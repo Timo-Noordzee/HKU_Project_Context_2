@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: DefaultGenerator
   m_EditorClassIdentifier: 
   generatorPlacementRange: 3
-  generatorDetectionRange: 30
+  generatorDetectionRange: 28.51
+  generatorBuildingDuration: 5
