@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b759415b314722848b23592689f4970a, type: 3}
   m_Name: DefaultSettings
   m_EditorClassIdentifier: 
-  defaultGeneratorSettingsProfile: {fileID: 11400000, guid: bdeca25d5127542479f77fac583f9965,
+  generatorSettingsProfile: {fileID: 11400000, guid: bdeca25d5127542479f77fac583f9965,
+    type: 2}
+  userInterfaceSettingsProfile: {fileID: 11400000, guid: 786f7d27f9c332440bfee21930b6b168,
+    type: 2}
+  astroidSettingsProfile: {fileID: 11400000, guid: 47e82a1af41437d4e8a8a7f25eaf56b4,
     type: 2}

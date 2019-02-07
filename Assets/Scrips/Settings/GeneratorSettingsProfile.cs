@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Settings/GeneratorSettingsProfile")]
+[CreateAssetMenu(menuName = "Settings/Generator Settings Profile")]
 public class GeneratorSettingsProfile: ScriptableObject {
 
     [Header("Generator Settings Profile")]
@@ -17,6 +17,12 @@ public class GeneratorSettingsProfile: ScriptableObject {
     [SerializeField] private float generatorDetectionRange = 15.0f;
     public float GeneratorDetectionRange {
         get { return generatorDetectionRange; }
+    }
+
+    [Tooltip("The time it takes to build a generator")]
+    [SerializeField] private float generatorBuildingDuration = 5.0f;
+    public float GeneratorBuildingDuration {
+        get { return generatorBuildingDuration; }
     }
 
 }
