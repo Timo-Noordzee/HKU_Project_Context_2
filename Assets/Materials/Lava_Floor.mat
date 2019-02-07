@@ -97,7 +97,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Strench: 0.09
+    - _Strench: 0.6
     - _TextureChangespeed: 0.3
     - _TextureDistanse: 1
     - _TextureStrench: 1
