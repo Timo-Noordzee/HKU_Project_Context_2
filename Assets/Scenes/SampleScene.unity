@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d259a9d6348b4b4cac8a60fad0e53ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDir: {x: 0, y: 0, z: 1}
+  moveDir: {x: 0, y: 1, z: 0}
   maxDistance: 3
 --- !u!65 &645558008
 BoxCollider:
@@ -1138,6 +1138,7 @@ GameObject:
   - component: {fileID: 1529982925}
   - component: {fileID: 1529982924}
   - component: {fileID: 1529982920}
+  - component: {fileID: 1529982927}
   - component: {fileID: 1529982926}
   m_Layer: 0
   m_Name: PlayerMain
@@ -1274,6 +1275,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f5289c364331a41a479082b67c2433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1529982927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1529982918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706331870649c0f48ba83fd9aefd36ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpHeart: {fileID: 1141102549037942, guid: 2bac353905946384b888ba63a35d33af, type: 2}
 --- !u!1 &1580578366
 GameObject:
   m_ObjectHideFlags: 0

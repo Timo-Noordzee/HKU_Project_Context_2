@@ -32,8 +32,9 @@ public class MoveScaffold : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.Translate(move * Time.deltaTime);
-
+       
         moveDistance += Mathf.Abs(move.x * Time.deltaTime);
+        moveDistance += Mathf.Abs(move.y * Time.deltaTime);
         moveDistance += Mathf.Abs(move.z * Time.deltaTime);
 
         if(moveDistance > maxDistance)
