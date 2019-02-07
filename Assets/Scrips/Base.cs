@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Base: MonoBehaviour {
 
-    public static string TAG = "base";
+    public static string TAG = "Base";
 
     private void Start() {
 

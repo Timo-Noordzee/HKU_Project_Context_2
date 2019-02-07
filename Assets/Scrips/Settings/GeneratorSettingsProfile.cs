@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Settings/GeneratorSettingsProfile")]
+[CreateAssetMenu(menuName = "Settings/Generator Settings Profile")]
 public class GeneratorSettingsProfile: ScriptableObject {
 
     [Header("Generator Settings Profile")]

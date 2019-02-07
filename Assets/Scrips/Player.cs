@@ -20,17 +20,19 @@ public class Player: MonoBehaviour {
         set {
             if (canBuild == value) return;
             canBuild = value;
-            if (canBuild) {
-                animator.SetBool("Show", true);
-            } else {
-                animator.SetBool("Show", false);
+            if (canBuild && !returnToBase) {
+                UserInterfaceManager.UpdateTooltipIcon(Icon.Build);
+                UserInterfaceManager.ShowTooltip("Keep pressing left click to build generator!");
+                UserInterfaceManager.ToggleTooltipIcon(true);
             }
-            animator.SetTrigger("ShowIcon");
         }
     }
+    private bool isBuilding;
+
+    private SettingsProfile settingsProfile;
 
     private void Start() {
-
+        settingsProfile = SettingsProfile.Main;
     }
 
     private void OnEnable() {
@@ -43,19 +45,23 @@ public class Player: MonoBehaviour {
 
     private void Update() {
         if (closestGenerator != null) {
-            if (!returnToBase) {
-                float distance = closestGenerator.CalculateDistance(transform.position, true);
-                distanceIndicatorImage.fillAmount = distance;
-                CanBuild = (distance >= 1);
-            } else {
-
-            }
+            float distance = closestGenerator.CalculateDistance(transform.position, true);
+            distanceIndicatorImage.color = settingsProfile.UserInterfaceSettingsProfile.HeathIndicatorGradient.Evaluate(distance);
+            CanBuild = (distance >= 1) && !closestGenerator.isbuild;
         }
 
         if (Input.GetButtonDown("Fire1")) {
-            if (CanBuild) {
-                //Instantiate(generatorPrefab, closestGenerator.tr)
+            if (CanBuild && !returnToBase) {
+                closestGenerator.AddBuildingProgress(0.1f);
             }
+        }
+    }
+
+    private IEnumerator IEBuildGenerator() {
+        float buildDuration = settingsProfile.GeneratorBuildingDuration;
+        float steps = buildDuration / 0.1f;
+        for (int i = 0; i < steps; i++) {
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
@@ -63,6 +69,10 @@ public class Player: MonoBehaviour {
         if (other.gameObject.CompareTag(GeneratorSpot.TAG)) {
             closestGenerator = other.gameObject.GetComponent<GeneratorSpot>();
         } else if (other.gameObject.CompareTag(Base.TAG)) {
+            if (returnToBase) {
+                UserInterfaceManager.ToggleTooltipIcon(false);
+                UserInterfaceManager.ToggleTooltip(false);
+            }
             returnToBase = false;
         }
     }
@@ -75,6 +85,14 @@ public class Player: MonoBehaviour {
 
     private void OnBuildGenerator() {
         returnToBase = true;
+        canBuild = false;
+
+        closestGenerator.isbuild = true;
+        Instantiate(generatorPrefab, closestGenerator.transform.position, closestGenerator.transform.rotation, closestGenerator.transform);
+
+
+        UserInterfaceManager.UpdateTooltipIcon(Icon.Home);
+        UserInterfaceManager.ShowTooltip("Return to the main base to restock on supplies!");
     }
 
 }
