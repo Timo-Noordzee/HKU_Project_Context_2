@@ -31,8 +31,14 @@ public class Player: MonoBehaviour {
 
     private SettingsProfile settingsProfile;
 
+    private static Player Instance;
+    public static Transform Transform {
+        get { return Instance.transform; }
+    }
+
     private void Start() {
         settingsProfile = SettingsProfile.Main;
+        Instance = this;
     }
 
     private void OnEnable() {
@@ -58,7 +64,7 @@ public class Player: MonoBehaviour {
     }
 
     private IEnumerator IEBuildGenerator() {
-        float buildDuration = settingsProfile.GeneratorBuildingDuration;
+        float buildDuration = settingsProfile.GeneratorSettingsProfile.GeneratorBuildingDuration;
         float steps = buildDuration / 0.1f;
         for (int i = 0; i < steps; i++) {
             yield return new WaitForSeconds(0.1f);
@@ -80,6 +86,12 @@ public class Player: MonoBehaviour {
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag(GeneratorSpot.TAG)) {
             closestGenerator = null;
+        }
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("Lava")) {
+            EventManager.triggerEvent(GameEventType.PlayerDieEvent);
         }
     }
 

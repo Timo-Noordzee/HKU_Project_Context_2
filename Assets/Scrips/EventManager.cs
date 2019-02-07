@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameEventType {
-    OnBuildGeneratorEvent
+    OnBuildGeneratorEvent,
+    PlayerDieEvent
 }
 
 public static class EventManager {

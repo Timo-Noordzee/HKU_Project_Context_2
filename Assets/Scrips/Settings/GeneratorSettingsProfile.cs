@@ -19,4 +19,10 @@ public class GeneratorSettingsProfile: ScriptableObject {
         get { return generatorDetectionRange; }
     }
 
+    [Tooltip("The time it takes to build a generator")]
+    [SerializeField] private float generatorBuildingDuration = 5.0f;
+    public float GeneratorBuildingDuration {
+        get { return generatorBuildingDuration; }
+    }
+
 }

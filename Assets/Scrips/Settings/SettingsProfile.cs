@@ -16,17 +16,17 @@ public class SettingsProfile: ScriptableObject {
         get { return generatorSettingsProfile; }
     }
 
-    [Tooltip("The time it takes to build a generator")]
-    [SerializeField] private float generatorBuildingDuration = 5.0f;
-    public float GeneratorBuildingDuration {
-        get { return generatorBuildingDuration; }
-    }
-
     [Header("User Interface Settings")]
     [Tooltip("The default UserInterfaceSettingsProfile that gets assigned")]
     [SerializeField] private UserInterfaceSettingsProfile userInterfaceSettingsProfile;
     public UserInterfaceSettingsProfile UserInterfaceSettingsProfile {
         get { return userInterfaceSettingsProfile; }
+    }
+
+    [Header("Astroid Spawner Settings")]
+    [SerializeField] AstroidSettingsProfile astroidSettingsProfile;
+    public AstroidSettingsProfile AstroidSettingsProfile {
+        get { return astroidSettingsProfile; }
     }
 
 }
