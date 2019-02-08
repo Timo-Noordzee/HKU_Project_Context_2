@@ -10,12 +10,12 @@ TerrainLayer:
   m_DiffuseTexture: {fileID: 2800000, guid: 13cf064968ac2164eaff6ad26c63d6fc, type: 3}
   m_NormalMapTexture: {fileID: 2800000, guid: ba00000738c206c47934ae29c05c16f2, type: 3}
   m_MaskMapTexture: {fileID: 0}
-  m_TileSize: {x: 4, y: 4}
+  m_TileSize: {x: 5, y: 5}
   m_TileOffset: {x: 0, y: 0}
-  m_Specular: {r: 0, g: 0, b: 0, a: 0}
+  m_Specular: {r: 0.5, g: 0.41072425, b: 0.2570755, a: 1}
   m_Metallic: 0.15
   m_Smoothness: 0
-  m_NormalScale: 1.29
+  m_NormalScale: 0.94
   m_DiffuseRemapMin: {x: 0, y: 0, z: 0, w: 0}
   m_DiffuseRemapMax: {x: 1, y: 1, z: 1, w: 1}
   m_MaskMapRemapMin: {x: 0, y: 0, z: 0, w: 0}
