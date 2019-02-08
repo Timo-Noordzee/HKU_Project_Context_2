@@ -9,7 +9,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Burned_tree1_LowPoly:Group52279
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rock_Texture3
+    second: {fileID: 2800000, guid: 14794b16b0c253a4e91b36c275792215, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

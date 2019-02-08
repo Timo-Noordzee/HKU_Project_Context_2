@@ -9,7 +9,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: GameJam_Rock1_ModelZbrush:Group30623
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rock_Texture4
+    second: {fileID: 2800000, guid: 729f4760ef2ac32478f8c054326ad7e7, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

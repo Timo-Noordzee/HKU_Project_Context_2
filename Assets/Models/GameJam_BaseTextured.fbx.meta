@@ -9,7 +9,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: baseStation:Mesh
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: 869e93d4c94646449b3d803f4ea9a148, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Base texture3
+    second: {fileID: 2800000, guid: 9eb2f4d83dcb99b4ca46be0d0cec690d, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

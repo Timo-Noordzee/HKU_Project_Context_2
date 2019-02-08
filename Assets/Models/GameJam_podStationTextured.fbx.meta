@@ -48,7 +48,22 @@ ModelImporter:
     2300000: grid_Dak
     3300000: grid_Dak
     4300000: grid_Dak
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bovenkant_Texture
+    second: {fileID: 2100000, guid: f5af19a9e5b62df48b48167b48d3abc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Texture
+    second: {fileID: 2100000, guid: 7e26cde8cbf190e43982255a3147acd4, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Base texture3
+    second: {fileID: 2800000, guid: 54bbcabd813c70b4d8ae2deae0b10403, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

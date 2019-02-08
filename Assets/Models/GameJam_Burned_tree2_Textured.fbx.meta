@@ -9,7 +9,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Burned_tree1_LowPoly:Group228
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: bfdb33f949e2ce649b4f4d3f9a3b9188, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: burnedTree texture
+    second: {fileID: 2800000, guid: c3537392720daf6469718c27d984ea51, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
