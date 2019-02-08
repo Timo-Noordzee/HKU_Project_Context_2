@@ -103,7 +103,15 @@ public class Player: MonoBehaviour {
     }
 
     private void OnPlayerDieEvent() {
+        Debug.Log("Die!");
+        StartCoroutine(ResetPosition());
+    }
+
+    private IEnumerator ResetPosition() {
+        GetComponent<CharacterController>().enabled = false;
+        yield return new WaitForSeconds(0.01f);
         transform.position = spawnPoint.position;
+        GetComponent<CharacterController>().enabled = true;
     }
 
     private void OnBuildGenerator() {
@@ -111,7 +119,7 @@ public class Player: MonoBehaviour {
         canBuild = false;
 
         closestGenerator.isbuild = true;
-        Instantiate(generatorPrefab, closestGenerator.transform.position, closestGenerator.transform.rotation, closestGenerator.transform);
+        Instantiate(generatorPrefab, closestGenerator.transform.position + new Vector3(0, 1, 0), closestGenerator.transform.rotation, closestGenerator.transform);
 
 
         UserInterfaceManager.UpdateTooltipIcon(Icon.Home);

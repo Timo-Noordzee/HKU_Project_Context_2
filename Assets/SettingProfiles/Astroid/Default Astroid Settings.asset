@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f58ba1b1fa98824cbc3bb5a22bc1468, type: 3}
   m_Name: Default Astroid Settings
   m_EditorClassIdentifier: 
-  astroidIntervalDelay: 5
+  astroidIntervalDelay: 1
   astroidPlayerZoneRange: 10
   astroidPlayerZoneChance: 0.5
-  astroidMovementSpeed: 60
+  astroidMovementSpeed: 100
+  astroidScales: {x: 1, y: 4}
   AstroidPrefab: {fileID: 4554371762075573653, guid: 47d6b81612e676643826422775232e24,
     type: 3}
